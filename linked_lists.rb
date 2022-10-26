@@ -1,5 +1,3 @@
-# https://www.theodinproject.com/lessons/ruby-linked-lists
-
 class Node
   
   attr_accessor :value, :next_node
@@ -22,8 +20,7 @@ class LinkedList
   def append(value)
     if @head.nil? # if there's nothing there (empty list) 
       @head = Node.new(value)
-    else # there's something in the list
-      # go to the end
+    else # empty list, go to the end
       current_node = @head # start at the beginning
       current_node = current_node.next_node until current_node.next_node.nil?
       current_node.next_node = Node.new(value)
@@ -133,4 +130,3 @@ puts "llist size is #{llist.size}"
 puts "llist contains 9? #{llist.contains?(9)}"
 puts "llist index of 900 is #{llist.find(900)}"
 puts "llist as a string is #{llist.to_s}"
-p llist
